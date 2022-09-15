@@ -16,9 +16,14 @@ public interface INav {
 
     String MAIN = "<main class=\"main\">";
     String END_MAIN = "</main>";
-    String WELCOME = 
-                "<section id=\"welcome\">" +
-                      "  " +
-                "</section>";
+    String WELCOME =
+            "<section id=\"welcome\">" +
+                    "  " +
+                    "</section>";
+
+    String WELCOME_START =
+               "<section id=\"welcome\">";
+    String WELCOME_END =
+               "</section>";
 }
 

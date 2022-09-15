@@ -15,7 +15,7 @@ public class SongRowMapper implements RowMapper<Song> {
         song.setTitle(rs.getString("title"));
         song.setPrice(rs.getDouble("price"));
         song.setUrl(rs.getString("url"));
-        song.setAlt(rs.getString("alt"));
+        song.setQuantity(rs.getInt("quantity"));
         return song;
     }
 }

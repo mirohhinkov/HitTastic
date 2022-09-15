@@ -9,8 +9,9 @@
     <%
         State state = State.getInstance();
     %>
-
+    <header>
     <%
         String log = (state.getUser() == null) ? "Login" : "Logout";
         out.print(INav.NAV.replace("%LOG%", log));
     %>
+    </header>

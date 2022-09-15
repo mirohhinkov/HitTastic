@@ -15,5 +15,5 @@ public class Song {
     private Artist artist;
     private double price;
     private String url;
-    private String alt;
+    private int quantity;
 }

@@ -20,7 +20,7 @@ th {
 }
 
 tr:nth-child(even) {
-  background-color: #b5d8f0;
+  background-color: #ddd;
 }
 
 tr {
@@ -31,7 +31,7 @@ tr {
   width: 20%;
 }
 .col2 {
-  width: 50%;
+  width: 40%;
 }
 
 .col3 {
@@ -39,28 +39,31 @@ tr {
   text-align: center;
 }
 .col4 {
-  width: 20%;
+  width: 15%;
   text-align: center;
 }
+
+.col4 {
+  width: 15%;
+  text-align: center;
+}
+
+
 li:nth-child(0) {
-  background-color: #ff0;
+  background-color: #ff9;
 }
 tr:nth-child(odd) {
   background: #fff;
 }
 
-button {
-  width: 2rem;
-  height: 2rem;
-  border-radius: 50%;
-  font-size: 1.2rem;
-  font-weight: bold;
-}
+    .action {
+        width: 1.5rem;
+        height: 1.5rem;
+        border-radius: 50%;
+    }
 
-.lightgreen {
-  background-color: lightgreen;
-}
+    #total {
+        text-align: right;
+    }
 
-.lightred {
-  background-color: lightcoral;
-}
+

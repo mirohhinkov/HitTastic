@@ -12,9 +12,7 @@
     </style>
 </head>
 <body>
-    <header>
-        <%@include file="include/nav.jsp" %>
-    </header>
+    <%@include file="include/nav.jsp" %>
     <h1>Login</h1>
     <%-- Test for DB connection --%>
     <%

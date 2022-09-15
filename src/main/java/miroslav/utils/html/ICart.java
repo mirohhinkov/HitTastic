@@ -1,32 +1,41 @@
 package miroslav.utils.html;
 
-public interface ICartTable {
+import javax.ws.rs.HEAD;
+
+public interface ICart {
+    String TITLE = "<h2>Your cart</h2>";
     String HEAD =
             "<table>" +
                     "<tr>" +
                       "<th class=\"col1\">Author</th>" +
                       "<th class=\"col2\">Title</th>" +
                       "<th class=\"col3\">Quantity</th>" +
-                      "<th class=\"col4\">Actions</th>" +
+                      "<th class=\"col4\">Price</th>" +
+                      "<th class=\"col5\"> </th>" +
                     "</tr>";
     String ROW =
             "<tr>" +
                     "<td class=\"col1\">%1%</td>" +
                     "<td class=\"col2\">%2%</td>" +
                     "<td class=\"col3\">%3%</td>" +
-                    "<td class=\"col4\">" +
+                    "<td class=\"col4\">%4%</td>" +
+                    "<td class=\"col5\">" +
                       "<ul>" +
                         "<li>" +
-                          "<a href=\"#1\"><button class=\"lightgreen\">+</button></a>" +
+                          "<a href=\"#1\"><img class=\"action\" src=\"/img/plus.png\" alt=\"Plus icon\" /></a>" +
                         "</li>" +
                         "<li>" +
-                          "<a href=\"#2\"><button class=\"lightgreen\">-</button></a>" +
+                          "<a href=\"#2\"><img class=\"action\" src=\"/img/minus.png\" alt=\"Minus icon\" /></a>" +
                         "</li>" +
                         "<li>" +
-                          "<a href=\"#3\"><button class=\"lightred\">x</button></a>" +
+                          "<a href=\"#3\"><img class=\"action\" src=\"/img/x.png\" alt=\"Delete icon\" /></a>" +
                         "</li>" +
                       "</ul>" +
                     "</td>" +
                   "</tr>";
+
+    String PRICE_ROW = "<tr><td id=\"total\" colspan=\"3\">Total: </td><td class=\"col4\">%1</td><td></td></tr>";
     String END_TABLE = "</table>";
+
+
 }

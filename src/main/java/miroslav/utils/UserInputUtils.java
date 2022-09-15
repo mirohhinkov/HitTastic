@@ -1,5 +1,7 @@
 package miroslav.utils;
 
+import static java.lang.String.join;
+
 public class UserInputUtils {
     public static String removeSpecialCharacters(String str) {
         String newString = str.trim().replaceAll("[^a-zA-Z0-9.!\\s']", "");
@@ -11,18 +13,29 @@ public class UserInputUtils {
 
         for (int i = 0; i < split.length; i++)
             split[i] = capitalizeWord(split[i]);
-        return String.join(" ", split);
+        return join(" ", split);
     }
 
     public static String prepareTitleForSqlQuery(String title) {
         String[] split = title.trim().split("\\s");
         for (int i = 0; i < split.length; i++)
             split[i] = "title LIKE \"%" + split[i] + "%\"";
-        return String.join(" AND ", split);
+        return join(" AND ", split);
     }
 
     private static String capitalizeWord(String str) {
         if (str == null || str.isEmpty()) return null;
         return str.substring(0,1).toUpperCase() + str.substring(1).toLowerCase();
+    }
+
+    public static String trimName(String name) {
+        String[] newName = name.substring(0,22).split(" ");
+        if (newName.length > 1) {
+            newName[newName.length - 1] = "...";
+            return join(" ", newName);
+        } else {
+            return name.substring(0, 18) + "...";
+        }
+
     }
 }

@@ -18,13 +18,16 @@
 
             if (state.getCart().getSongOrders().get(songId) == null) {
                 cartService.addSong(song, 1);
+                state.setMessage("Song " +
+                                   state
+                                   .getSongs()
+                                   .get(index)
+                                   .getTitle() + " added to your Cart");
+            } else {
+               cartService.increase(song);
             }
 
-            state.setMessage("Song " +
-                   state
-                   .getSongs()
-                   .get(index)
-                   .getTitle() + " added to your Cart");
+
             response.sendRedirect("songs.jsp");
         %>
     </body>

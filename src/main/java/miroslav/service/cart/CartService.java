@@ -19,35 +19,47 @@ import miroslav.model.SongOrder;
 public class CartService implements ICartService {
     
     private final Cart cart = State.getInstance().getCart();
+    private final State state = State.getInstance();
 
     @Override
     public void addSong(Song song, int quantity) {
-        cart.getSongOrders().put(Long.valueOf(song.getId()), new SongOrder(song, quantity));
+        cart.getSongOrders().put(song.getId(), new SongOrder(song, quantity));
     }
 
     @Override
     public boolean changeQuantity(Song song, int newQuantity) {
-//        if (newQuantity < 1) return false;
-//        if (newQuantity == 0) return this.removeSong(song);
-//        for (SongOrder s : songs) {
-//            if (s.getSong().getId() == song.getId()) {
-//                s.setQuantity(newQuantity);
-//                return true;
-//            }
-//        }
-        return false;
+        if (newQuantity < 1) return this.removeSong(song);
+        if (newQuantity > song.getQuantity())
+            return false;
+        state.getCart().getSongOrders().get(song.getId()).setQuantity(newQuantity);
+        return true;
+    }
+
+    @Override
+    public boolean increase(Song song) {
+        int newQuantity = state.getCart().getSongOrders().get(song.getId()).getQuantity() + 1;
+        return changeQuantity(song, newQuantity);
+    }
+
+    @Override
+    public boolean decrease(Song song) {
+        int newQuantity = state.getCart().getSongOrders().get(song.getId()).getQuantity() - 1;
+        return changeQuantity(song, newQuantity);
     }
 
     @Override
     public boolean removeSong(Song song) {
-//        for (SongOrder s : songs) {
-//            if (s.getSong().getId() == song.getId()) {
-//                songs.remove(s);
-//                return true;
-//            }
-//        }
-        return false;    
-    }    
+        state.getCart().getSongOrders().remove(song.getId());
+        return true;
+    }
+
+    @Override
+    public double cartPrice() {
+        double cartP = 0;
+        for (SongOrder order : state.getCart().getSongOrders().values())
+            cartP += order.getQuantity() * order.getSong().getPrice();
+        return cartP;
+    }
 
     @Override
     public boolean makeOrder() {
