@@ -1,3 +1,0 @@
-    <%
-        State state = State.getInstance();
-    %>
