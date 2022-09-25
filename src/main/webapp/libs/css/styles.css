@@ -1,0 +1,213 @@
+/*
+    Created on : 26 Aug 2022, 12:00:32
+    Author     : Miroslav Hinkov
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Open+Sans:wght@400;700&display=swap');
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      font-family: 'Open Sans', 'Lato', sans-serif;
+    }
+
+    body {
+      margin: 0;
+    }
+
+    h1,
+    h2,
+    h3 {
+      font-family: 'Lato', sans-serif;
+      font-weight: bold;
+    }
+
+    nav a {
+      margin-right: 15px;
+    }
+
+    #main-navigation {
+      width: 100%;
+      height: 5rem;
+      display: flex;
+      justify-content: right;
+      align-items: center;
+      padding: 0 10%;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    #main-navigation a {
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+    }
+
+    #main-navigation a:hover,
+    #main-navigation a:active {
+      color: #cf79f1;
+    }
+
+    #main-navigation h1 a:hover,
+    #main-navigation h1 a:active {
+      color: white;
+    }
+
+    #main-navigation img {
+      width: 6rem;
+      height: 6rem;
+      object-fit: cover;
+      object-position: top;
+      border: 2px solid white;
+      border-radius: 8px;
+      background-color: #ffe1bf;
+      transform: rotateZ(-5deg);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+      margin-top: 25px;
+    }
+    #welcome {
+      background: linear-gradient(to right top, #6305dd, #390281);
+      padding: 6rem 12%;
+    }
+
+    #welcome header {
+      display: flex;
+      align-items: flex-start;
+      margin: 3rem auto;
+    }
+
+    #welcome h2 {
+      font-size: 3.5rem;
+      margin: 0 0 0 2rem;
+      color: #e4e4e4;
+      width: 10rem;
+    }
+
+    #welcome p {
+      color: white;
+      font-size: 1.5rem;
+    }
+
+    main {
+      width: 90%;
+      max-width: 90rem;
+      margin: 3rem auto;
+      background-color: white;
+      padding: 1rem;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+    }
+
+    .main {
+      background-color: #f7f7f7;
+      padding: 1rem 6rem;
+      -webkit-box-flex: 1;
+      -ms-flex: 1;
+      flex: 1;
+      position: relative;
+      margin-top: -5rem;
+    }
+
+    #search {
+        display: flex;
+        justify-content: right;
+    }
+    #search label {
+        color: white
+    }
+
+    .card {
+      width: 30%;
+      min-width: 300px;
+      max-width: 350px;
+      height: 140px;
+      background-color: #060230;
+      border-radius: 5px;
+      padding: 5px;
+      color: aliceblue;
+      text-align: center;
+      display: flex;
+      margin-bottom: 2rem;
+    }
+
+    .song-img {
+      width: 40%;
+      height: auto;
+      border-radius: 3px;
+      object-fit: contain;
+    }
+
+    .card h3 {
+      margin-top: 8px;
+      margin-bottom: 5px;
+    }
+
+    .card_right {
+      width: 60%;
+    }
+
+    .btn_card,
+    .btn_card:link,
+    .btn_card:visited {
+      padding: 0.5rem;
+      border-radius: 2rem;
+      object-fit: contain;
+      display: inline-block;
+      text-decoration: none;
+      position: relative;
+      -webkit-transition: all 0.4s;
+      transition: all 0.4s;
+      font-weight: 400;
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+      border: none;
+      cursor: pointer;
+      margin-top: 0rem;
+      background-color: white;
+    }
+
+    .card span {
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: #060230;
+    }
+
+    #message {
+      position: fixed;
+      left: 0px;
+      top: 95%;
+      width: 100%;
+      height: 5%;
+      background-color: #060230;
+      color: white;
+      z-index: 3;
+      text-align: right;
+    }
+    #message p {
+      margin-top: 5px;
+      margin-left: 2rem;
+    }
+
+    .hide {
+        display: none;
+    }
+    .show {
+        display: block;
+    }
+    .red {
+        color: red !important;
+    }
+
+    .flex-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+    }
+
+    #buy {
+        justify-content: flex-end;
+        margin-top: 3px;
+    }
